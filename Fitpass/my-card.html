@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym department details</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <link rel="icon" href="assets/img/icon.png" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+    <script src="https://kit.fontawesome.com/a59b9b09ab.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet" />
+
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link href="assets/css/MyStyle.css" rel="stylesheet" />
+</head>
+
+<body class="body-my-card">
+    <div id="include-navbar"></div>
+    <!-- Content -->
+    <div id="my-card" class="my-card-container container">
+        <h2 class="row">Giỏ hàng của bạn</h2>
+        <div class="line row"></div>
+        <div class="my-card-title row">
+            <div class="form-check">
+                <input onchange="checkAll(this)" value="0" type="checkbox" value="" id="checkAll" />
+                <label class="" for="flexCheckChecked"> </label>
+            </div>
+            <div class="my-plan-title">Gói tập</div>
+            <div class="price-title">Đơn giá (credits)</div>
+            <div class="num-of-plan-title">Số lượng</div>
+            <div class="action-title">Thao tác</div>
+        </div>
+        <!-- Để foreach ở đây -->
+        <div class="plan-in-my-card">
+            <div class="all-plan-of-gym row">
+                <div class="form-check">
+                    <input onclick='checkUncheckGymDept(this)' name="gym" class="dept-checkbox" type="checkbox" value=""
+                        id="flexCheckChecked" />
+                    <label class="" for="flexCheckChecked"> </label>
+                </div>
+                <div class="gym-name-mc">Phòng gym Hòa Lạc</div>
+            </div>
+            <!-- Từng gym plan -->
+            <div class="row" style="height: 15px; background-color: white;"></div>
+            <div class="gym-department-plan row">
+                <div class="form-check">
+                    <input onclick='updateCartTotal(this)' name="plan" class="plan-checkbox" type="checkbox" value=""
+                        id="flexCheckChecked" />
+                    <label class="" for="flexCheckChecked"> </label>
+                </div>
+                <div class="plan-card-mc">
+                    <img class=""
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0ZzXyHZsB8zbJbdSjPVnhudXgXWnDbJIdOQ&usqp=CAU" />
+                    <div class="plan-info-mc">
+                        <h4 class="gym-plan-type">Gói tập kim cương</h4>
+                        <div class="plan-duration-mc">Thời lượng 365 ngày</div>
+                    </div>
+                    <div class="active-time-mc">
+                        Kích hoạt trong 10 ngày
+                    </div>
+                </div>
+                <div class="plan-price-mc">
+                    200
+                </div>
+                <div class="num-of-plan-mc">
+                    1
+                </div>
+                <button type="button" class="btn btn-warning">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="gym-department-plan row">
+                <div class="form-check">
+                    <input onclick='updateCartTotal(this)' name="plan" class="plan-checkbox" type="checkbox" value=""
+                        id="flexCheckChecked" />
+                    <label class="" for="flexCheckChecked"> </label>
+                </div>
+                <div class="plan-card-mc">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0ZzXyHZsB8zbJbdSjPVnhudXgXWnDbJIdOQ&usqp=CAU" />
+                    <div class="plan-info-mc">
+                        <h4 class="gym-plan-type">Gói tập trải nghiệm</h4>
+                        <div class="plan-duration-mc">Thời lượng 30 ngày</div>
+                    </div>
+                    <div class="active-time-mc">
+                        Kích hoạt trong vòng 5 ngày
+                    </div>
+                </div>
+                <div class="plan-price-mc">
+                    50
+                </div>
+                <div class="num-of-plan-mc">
+                    1
+                </div>
+                <button type="button" class="btn btn-warning">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="row" style="height: 15px; background-color: white;"></div>
+
+        </div>
+
+        <div class="plan-in-my-card ">
+            <div class="all-plan-of-gym row">
+                <div class="form-check">
+                    <input onclick='checkUncheckGymDept(this)' name="gym1" class="dept-checkbox" type="checkbox"
+                        value="" id="flexCheckChecked" />
+                    <label class="" for="flexCheckChecked"> </label>
+                </div>
+                <div class="gym-name-mc">Phòng tập gym hà nội Nshape Fitness</div>
+            </div>
+            <!-- Từng gym plan -->
+            <div class="row" style="height: 15px; background-color: white;"></div>
+            <div class="gym-department-plan row">
+                <div class="form-check">
+                    <input onclick='updateCartTotal(this)' name="plan" class="plan-checkbox" type="checkbox" value=""
+                        id="flexCheckChecked" />
+                    <label class="" for="flexCheckChecked"> </label>
+                </div>
+                <div class="plan-card-mc">
+                    <img
+                        src="https://www.shutterstock.com/image-vector/bodybuilding-emblem-gym-logo-design-260nw-2250386197.jpg" />
+                    <div class="plan-info-mc">
+                        <h4 class="gym-plan-type">Gói tập kim cương</h4>
+                        <div class="plan-duration-mc">Thời lượng 365 ngày</div>
+                    </div>
+                    <div class="active-time-mc">
+                        Kích hoạt trong vòng 10 ngày
+                    </div>
+                </div>
+                <div class="plan-price-mc">
+                    200
+                </div>
+                <div class="num-of-plan-mc">
+                    1
+                </div>
+                <button type="button" class="btn btn-warning">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="gym-department-plan row">
+                <div class="form-check">
+                    <input onclick='updateCartTotal(this)' name="plan" class="plan-checkbox" type="checkbox" value=""
+                        id="flexCheckChecked" />
+                    <label class="" for="flexCheckChecked"> </label>
+                </div>
+                <div class="plan-card-mc">
+                    <img
+                        src="https://www.shutterstock.com/image-vector/bodybuilding-emblem-gym-logo-design-260nw-2250386197.jpg" />
+                    <div class="plan-info-mc">
+                        <h4 class="gym-plan-type">Gói tập trải nghiệm</h4>
+                        <div class="plan-duration-mc">Thời lượng 30 ngày</div>
+                    </div>
+                    <div class="active-time-mc">
+                        Kích hoạt trong vòng 5 ngày
+                    </div>
+                </div>
+                <div class="plan-price-mc">
+                    50
+                </div>
+                <div class="num-of-plan-mc">
+                    1
+                </div>
+                <button type="button" class="btn btn-warning">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="gym" class="plan-in-my-card">
+            <div class="all-plan-of-gym row">
+                <div class="form-check">
+                    <input onclick='checkUncheckGymDept(this)' name="gym" class="dept-checkbox" type="checkbox"
+                        id="flexCheckChecked" />
+                    <label class="" for="flexCheckChecked"> </label>
+                </div>
+                <div class="gym-name-mc">Phòng gym California</div>
+            </div>
+            <!-- Từng gym plan -->
+            <div class="row" style="height: 15px; background-color: white;"></div>
+            <div class="list-plan-mc">
+                <div class="gym-department-plan row">
+                    <div class="form-check">
+                        <input onclick='updateCartTotal(this)' name="plan" class="plan-checkbox" type="checkbox"
+                            value="" id="flexCheckChecked" />
+                        <label class="" for="flexCheckChecked"> </label>
+                    </div>
+                    <div class="plan-card-mc">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJSael8OXoxrZYT51MKhAlnxY6B7Jb8_rw4w&usqp=CAU" />
+                        <div class="plan-info-mc">
+                            <h4 class="gym-plan-type">Gói tập kim cương</h4>
+                            <div class="plan-duration-mc">Thời lượng 365 ngày</div>
+                        </div>
+                        <div class="active-time-mc">
+                            Kích hoạt trong vòng 10 ngày
+                        </div>
+                    </div>
+                    <div class="plan-price-mc">
+                        250
+                    </div>
+                    <div class="num-of-plan-mc">
+                        1
+                    </div>
+                    <button type="button" class="btn btn-warning">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="gym-department-plan row">
+                    <div class="form-check">
+                        <input onclick='updateCartTotal(this)' name="plan" class="plan-checkbox" type="checkbox"
+                            value="" id="flexCheckChecked" />
+                        <label class="" for="flexCheckChecked"> </label>
+                    </div>
+                    <div class="plan-card-mc">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJSael8OXoxrZYT51MKhAlnxY6B7Jb8_rw4w&usqp=CAU" />
+                        <div class="plan-info-mc">
+                            <h4 class="gym-plan-type">Gói tập trải nghiệm</h4>
+                            <div class="plan-duration-mc">Thời lượng 30 ngày</div>
+                        </div>
+                        <div class="active-time-mc">
+                            Kích hoạt trong vòng 5 ngày
+                        </div>
+                    </div>
+                    <div class="plan-price-mc">
+                        100
+                    </div>
+                    <div class="num-of-plan-mc">
+                        1
+                    </div>
+                    <button type="button" class="btn btn-warning">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="height: 15px; background-color: white;"></div>
+        <div class="total-container-mc row justify-content-center">
+            <h3 class="total-plan-mc col-md-4 col-sm-3 col-3">
+                <span id="count-all-plan-mc">0</span>
+                <span>sản phẩm</span>
+            </h3>
+            <div class="total-credits-mc col-md-6 col-sm-5 col-6">
+                <span class="total-title">Tổng thanh toán : </span>
+                <span id="total-price-mc" class="total">0</span>
+            </div>
+            <div class="buy-button-mc col-md-2 col-sm-4 col-3">
+                <button class="btn btn-warning" style="font-weight: 700;">Mua hàng</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Vendor JS Files -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        const element = document.getElementById("my-card");
+        const nodes = element.getElementsByClassName("gym-department-plan");
+        
+        let cbActual = document.querySelectorAll('input:not([class=auto])');
+        cbActual.foreach(cb =>{
+            cb.addEventListener('change', (event) =>{
+                if(!event.target.checked){}
+            })
+        })
+
+        var checkboxs = document.querySelectorAll('.plan-checkbox');
+        var dept_checkboxes = document.querySelectorAll('.dept-checkbox');
+        var check_all = document.getElementById('checkAll');
+        console.log(checkboxs);
+        var count = 0;
+        // select all checkbox and return count
+        document.getElementById('checkAll').onclick = function () {
+            count = 0;
+            for (var checkbox of checkboxs) {
+                checkbox.checked = this.checked;
+                for (var checkBoxDept of dept_checkboxes) {
+                    checkBoxDept.checked = this.checked;
+                }
+                if (checkbox.checked == true) {
+                    count++;
+                    document.getElementById('count-all-plan-mc').innerHTML = count;
+                } else {
+                    count = 0;
+                    document.getElementById('count-all-plan-mc').innerHTML = count;
+                }
+            }
+        }
+
+
+        // for invidual checkbox click
+        for (var i = 0; i < checkboxs.length; i++) {
+            checkboxs[i].addEventListener('click', function () {
+                var dept_check = this.parentElement.parentElement.parentElement.querySelectorAll('.dept-checkbox');
+                // make sure if checkbox is checked or not
+                if (this.checked == true) {
+                    count++;
+                } else {
+                    count--;
+                    dept_check.checked = "checked";
+                }
+                if (count < 0) { count = 0; }
+                document.getElementById('count-all-plan-mc').innerHTML = count;
+            })
+        }
+
+        // for invidual dept checkbox click
+        var count_dept_checkboxes = 0;
+        for (var i = 0; i < dept_checkboxes.length; i++) {
+            dept_checkboxes[i].addEventListener('click', function () {
+                document.getElementById('count-all-plan-mc').innerHTML = count;
+                var plan_checkboxes_in_dept = this.parentElement.parentElement.parentElement.querySelectorAll('.plan-checkbox');
+                console.log(plan_checkboxes_in_dept);
+                for (var j = 0; j < plan_checkboxes_in_dept.length; j++) {
+                    plan_checkboxes_in_dept[j].checked = this.checked;
+                }
+                if (this.checked == true) {
+                    count = count + plan_checkboxes_in_dept.length;
+                    document.getElementById('count-all-plan-mc').innerHTML = count;
+                } else {
+                    count = count - plan_checkboxes_in_dept.length;
+                    if (count < 0) { count = 0; }
+                    document.getElementById('count-all-plan-mc').innerHTML = count;
+                }
+            })
+        }
+
+
+        function updateCartTotal(checkBox) {
+            let total = document.getElementById("total-price-mc").innerHTML;
+            total_int = parseInt(total);
+            get2 = checkBox.parentElement.parentElement.getElementsByClassName("plan-price-mc");
+            price_int = parseInt(get2[0].innerHTML);
+            if (checkBox.checked) {
+                total_int = total_int + price_int;
+                document.getElementById("total-price-mc").innerHTML = total_int;
+                console.log(total_int);
+            }
+            else {
+                checkAll = document.getElementById("checkAll");
+                checkAll.checked = false;
+                total_int = total_int - price_int;
+                // if(total_int < 0)
+                document.getElementById("total-price-mc").innerHTML = total_int;
+                console.log(total_int);
+            }
+        }
+    </script>
+</body>
+
+</html>

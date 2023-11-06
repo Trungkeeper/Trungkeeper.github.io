@@ -671,3 +671,4 @@ const form = document.querySelector("#change-pw-form");
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 });
+

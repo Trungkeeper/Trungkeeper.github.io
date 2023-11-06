@@ -106,7 +106,10 @@
               <div class="account-balance">
                 <div>
                   <span><img src="https://cdn-icons-png.flaticon.com/128/10317/10317738.png"></span>
-                  <span class="wallet-money">1200 Credits</span>
+                  <span class="wallet-money">
+                    <span>1200</span>
+                    <span>Credits</span>
+                  </span>
                 </div>
                 <div class="ab-title">Số dư trong ví</div>
               </div>
@@ -122,7 +125,7 @@
             </div>
           </div>
           <!-- User profile tab -->
-          <div class="mt-4 mb-5" class="user-profile" id="user-profile">
+          <div class="mt-4 mb-4" class="user-profile" id="user-profile">
             <div class="row user-change-ava justify-content-center">
               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-xs-6 mb-3">
                 <div class="user-img">
@@ -196,7 +199,7 @@
           </div>
 
           <!-- Change pw tab -->
-          <div class="mt-4 mb-5" class="user-pw" id="change-pw">
+          <div class="mt-4 mb-4" class="user-pw" id="change-pw">
             <div class="row change-pw justify-content-center">
               <div class="change-pw-icon col-12 mx-auto mt-3">
                 <img src="https://cdn-icons-png.flaticon.com/128/4909/4909667.png">
@@ -431,22 +434,10 @@
             </div>
           </div>
 
-          <!-- User schedule tab -->
-          <div class="mt-4" class="transaction-history" id="transaction-history"
+          <!-- User transaction history tab -->
+          <div class="mt-4 mb-4" class="transaction-history" id="transaction-history"
             style="background-color: white; padding: 20px; border-radius: 10px;">
             <div class="row justify-content-center">
-              <!-- <table cellspacing="5" cellpadding="5">
-                  <tbody>
-                    <tr>
-                      <td>Minimum date:</td>
-                      <td><input type="date" id="min" name="min"></td>
-                    </tr>
-                    <tr>
-                      <td>Maximum date:</td>
-                      <td><input type="date" id="max" name="max"></td>
-                    </tr>
-                  </tbody>
-                </table> -->
               <table class="table table-striped" id="transaction-history-tb" style="width:100%">
                 <thead>
                   <tr>
@@ -784,6 +775,7 @@
   </div>
 
   <!-- ======= Footer ======= -->
+  <div class="mt-4" id="include-footer"></div>
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i

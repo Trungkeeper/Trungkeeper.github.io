@@ -2448,7 +2448,7 @@ a:link {
 
 .ab-title {
   font-size: 14px;
-  margin-top: 5px;
+  margin-left: 15px;
 }
 
 .wallet-money {
@@ -2502,7 +2502,7 @@ a:link {
 }
 
 .banking-card-list img {
-  width: 30px;
+  width: 50px;
 }
 
 .banking-card-list .card-input-element {
@@ -2513,6 +2513,10 @@ a:link {
   background-color: white;
   border-radius: 10px;
   padding: 15px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .banking-card-list .card-input:hover {
@@ -2537,6 +2541,8 @@ a:link {
 }
 
 .add-money .card-input {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   border-radius: 10px;
   padding: 15px;
@@ -2681,7 +2687,12 @@ a:link {
   transform: scale(1.0);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
-
+.vnpay-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -15px;
+}
 /* Css  for profile tab */
 .user-profile{
   background-color: white;
@@ -2811,9 +2822,9 @@ input[type="radio"]:checked{
   padding-top: 10px;
   padding-bottom: 10px;
   height: fit-content;
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
-  box-shadow: 5px 5px 5px grey;
+  box-shadow:0 0 25px 0 rgb(193, 193, 193);
   font-size: 14px;
 }
 .pw-format img{
@@ -2829,6 +2840,47 @@ input[type="radio"]:checked{
   background-color: #000;
   color: white;
   font-weight: 600;
+}
+
+/* Css for notifications tab */
+.my-notifications{
+  width: 100%;
+  /* height: 500px; */
+  margin: auto;
+  background-color: white; 
+  padding: 20px; 
+  border-radius: 10px;
+}
+.noti-card{
+  /* background-color: rgb(228, 251, 255); */
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  height: fit-content;
+  border-radius: 10px;
+  border: 1px solid rgb(237, 217, 0)
+  /* grid-template-columns: 1fr 4fr; */
+}
+.noti-content{
+  margin-left: 20px;
+}
+.my-notifications img{
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.noti-description{
+  font-size: 14px;
+  color: grey;
+}
+.noti-time{
+  font-size: 14px;
+  color: grey;
+}
+.my-notifications .pagination .active-page a{
+  background-color: black;
+  color: white;
 }
 
 

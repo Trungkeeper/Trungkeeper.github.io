@@ -4374,7 +4374,7 @@ section {
   ;
 }
 
-.tabs {
+/* .tabs {
   display: block;
   display: -webkit-flex;
   display: -moz-flex;
@@ -4464,7 +4464,7 @@ section {
 
 .tabs .tab-2:last-child [type="radio"]:checked+div {
   margin-left: -100%;
-}
+} */
 
 .tabs img {
   width: 35px;

@@ -39,7 +39,7 @@
         <div class="line row"></div>
         <div class="my-card-title row">
             <div class="form-check">
-                <input onchange="checkAll(this)" value="0" type="checkbox" value="" id="checkAll" />
+                <input class="auto" onchange="checkAll(this)" value="0" type="checkbox" value="" id="check-all" />
                 <label class="" for="flexCheckChecked"> </label>
             </div>
             <div class="my-plan-title">Gói tập</div>
@@ -51,7 +51,7 @@
         <div class="plan-in-my-card">
             <div class="all-plan-of-gym row">
                 <div class="form-check">
-                    <input onclick='checkUncheckGymDept(this)' name="gym" class="dept-checkbox" type="checkbox" value=""
+                    <input onchange='checkAllGym(this)' name="gym" class="dept-checkbox" type="checkbox" value=""
                         id="flexCheckChecked" />
                     <label class="" for="flexCheckChecked"> </label>
                 </div>
@@ -129,7 +129,7 @@
         <div class="plan-in-my-card ">
             <div class="all-plan-of-gym row">
                 <div class="form-check">
-                    <input onclick='checkUncheckGymDept(this)' name="gym1" class="dept-checkbox" type="checkbox"
+                    <input  onchange='checkAllGym(this)' name="gym1" class="dept-checkbox" type="checkbox"
                         value="" id="flexCheckChecked" />
                     <label class="" for="flexCheckChecked"> </label>
                 </div>
@@ -202,11 +202,11 @@
             </div>
         </div>
 
-        <div id="gym" class="plan-in-my-card">
+        <div class="plan-in-my-card">
             <div class="all-plan-of-gym row">
                 <div class="form-check">
-                    <input onclick='checkUncheckGymDept(this)' name="gym" class="dept-checkbox" type="checkbox"
-                        id="flexCheckChecked" />
+                    <input  onchange='checkAllGym(this)' name="gym" class="dept-checkbox" type="checkbox"
+                        />
                     <label class="" for="flexCheckChecked"> </label>
                 </div>
                 <div class="gym-name-mc">Phòng gym California</div>
@@ -217,7 +217,7 @@
                 <div class="gym-department-plan row">
                     <div class="form-check">
                         <input onclick='updateCartTotal(this)' name="plan" class="plan-checkbox" type="checkbox"
-                            value="" id="flexCheckChecked" />
+                            value="" />
                         <label class="" for="flexCheckChecked"> </label>
                     </div>
                     <div class="plan-card-mc">
@@ -312,95 +312,146 @@
     <script>
         const element = document.getElementById("my-card");
         const nodes = element.getElementsByClassName("gym-department-plan");
-        
+
+        // check all
+        let checkboxs = document.querySelectorAll("input[type='checkbox']")
         let cbActual = document.querySelectorAll('input:not([class=auto])');
-        cbActual.foreach(cb =>{
+        cbActual.forEach(cb => {
             cb.addEventListener('change', (event) =>{
-                if(!event.target.checked){}
+                if(!event.target.checked){
+                    document.getElementById('check-all').checked = false;
+                } else{
+                    if([...cbActual].every(cb=>cb.checked === true))
+                    document.getElementById('check-all').checked = true;
+                }
             })
         })
-
-        var checkboxs = document.querySelectorAll('.plan-checkbox');
-        var dept_checkboxes = document.querySelectorAll('.dept-checkbox');
-        var check_all = document.getElementById('checkAll');
-        console.log(checkboxs);
-        var count = 0;
-        // select all checkbox and return count
-        document.getElementById('checkAll').onclick = function () {
-            count = 0;
-            for (var checkbox of checkboxs) {
-                checkbox.checked = this.checked;
-                for (var checkBoxDept of dept_checkboxes) {
-                    checkBoxDept.checked = this.checked;
-                }
-                if (checkbox.checked == true) {
-                    count++;
-                    document.getElementById('count-all-plan-mc').innerHTML = count;
-                } else {
-                    count = 0;
-                    document.getElementById('count-all-plan-mc').innerHTML = count;
-                }
+        function checkAll(myCheckAll){
+            if(myCheckAll.checked == true){
+                checkboxs.forEach(function(checkbox){
+                    checkbox.checked = true;
+                });
+            } else {
+                checkboxs.forEach(function(checkbox){
+                    checkbox.checked = false;
+                });
             }
         }
+
+        // check all in each gym department
+        let dept_checkboxes = document.querySelectorAll('.dept-checkbox');        
+        for(var i=0; i<dept_checkboxes.length; i++){
+            let cbActual1 = dept_checkboxes[i].parentElement.parentElement.parentElement.querySelectorAll('input:not([class=dept-checkbox])');
+            console.log(cbActual1);
+            cbActual1.forEach(cb1 => {
+            cb1.addEventListener('change', (event) =>{
+                if(!event.target.checked){
+                    let test = cb1.parentElement.parentElement.parentElement.getElementsByClassName("dept-checkbox");
+                    console.log(test)
+                    cb1.parentElement.parentElement.parentElement.getElementsByClassName("dept-checkbox")[0].checked = false;
+                    console.log('checked');
+                } else{
+                    if([...cbActual1].every(cb1=>cb1.checked === true)){
+                        cb1.parentElement.parentElement.parentElement.getElementsByClassName("dept-checkbox")[0].checked = true;
+                        console.log("unchecked");
+                    }
+                }
+            })
+        })
+        }
+        function checkAllGym(myCheckAll){
+            let own_checkboxs = myCheckAll.parentElement.parentElement.parentElement.querySelectorAll("input[type='checkbox']");
+            if(myCheckAll.checked == true){
+                own_checkboxs.forEach(function(checkbox){
+                    checkbox.checked = true;
+                });
+            } else {
+                own_checkboxs.forEach(function(checkbox){
+                    checkbox.checked = false;
+                });
+            }
+        }
+
+        // var checkboxs = document.querySelectorAll('.plan-checkbox');
+        // var dept_checkboxes = document.querySelectorAll('.dept-checkbox');
+        // var check_all = document.getElementById('checkAll');
+        // console.log(checkboxs);
+        // var count = 0;
+        // select all checkbox and return count
+        // document.getElementById('checkAll').onclick = function () {
+        //     count = 0;
+        //     for (var checkbox of checkboxs) {
+        //         checkbox.checked = this.checked;
+        //         for (var checkBoxDept of dept_checkboxes) {
+        //             checkBoxDept.checked = this.checked;
+        //         }
+        //         if (checkbox.checked == true) {
+        //             count++;
+        //             document.getElementById('count-all-plan-mc').innerHTML = count;
+        //         } else {
+        //             count = 0;
+        //             document.getElementById('count-all-plan-mc').innerHTML = count;
+        //         }
+        //     }
+        // }
 
 
         // for invidual checkbox click
-        for (var i = 0; i < checkboxs.length; i++) {
-            checkboxs[i].addEventListener('click', function () {
-                var dept_check = this.parentElement.parentElement.parentElement.querySelectorAll('.dept-checkbox');
-                // make sure if checkbox is checked or not
-                if (this.checked == true) {
-                    count++;
-                } else {
-                    count--;
-                    dept_check.checked = "checked";
-                }
-                if (count < 0) { count = 0; }
-                document.getElementById('count-all-plan-mc').innerHTML = count;
-            })
-        }
+        // for (var i = 0; i < checkboxs.length; i++) {
+        //     checkboxs[i].addEventListener('click', function () {
+        //         var dept_check = this.parentElement.parentElement.parentElement.querySelectorAll('.dept-checkbox');
+        //         if (this.checked == true) {
+        //             count++;
+        //         } else {
+        //             count--;
+        //             dept_check.checked = "checked";
+        //         }
+        //         if (count < 0) { count = 0; }
+        //         document.getElementById('count-all-plan-mc').innerHTML = count;
+        //     })
+        // }
 
         // for invidual dept checkbox click
-        var count_dept_checkboxes = 0;
-        for (var i = 0; i < dept_checkboxes.length; i++) {
-            dept_checkboxes[i].addEventListener('click', function () {
-                document.getElementById('count-all-plan-mc').innerHTML = count;
-                var plan_checkboxes_in_dept = this.parentElement.parentElement.parentElement.querySelectorAll('.plan-checkbox');
-                console.log(plan_checkboxes_in_dept);
-                for (var j = 0; j < plan_checkboxes_in_dept.length; j++) {
-                    plan_checkboxes_in_dept[j].checked = this.checked;
-                }
-                if (this.checked == true) {
-                    count = count + plan_checkboxes_in_dept.length;
-                    document.getElementById('count-all-plan-mc').innerHTML = count;
-                } else {
-                    count = count - plan_checkboxes_in_dept.length;
-                    if (count < 0) { count = 0; }
-                    document.getElementById('count-all-plan-mc').innerHTML = count;
-                }
-            })
-        }
+        // var count_dept_checkboxes = 0;
+        // for (var i = 0; i < dept_checkboxes.length; i++) {
+        //     dept_checkboxes[i].addEventListener('click', function () {
+        //         document.getElementById('count-all-plan-mc').innerHTML = count;
+        //         var plan_checkboxes_in_dept = this.parentElement.parentElement.parentElement.querySelectorAll('.plan-checkbox');
+        //         console.log(plan_checkboxes_in_dept);
+        //         for (var j = 0; j < plan_checkboxes_in_dept.length; j++) {
+        //             plan_checkboxes_in_dept[j].checked = this.checked;
+        //         }
+        //         if (this.checked == true) {
+        //             count = count + plan_checkboxes_in_dept.length;
+        //             document.getElementById('count-all-plan-mc').innerHTML = count;
+        //         } else {
+        //             count = count - plan_checkboxes_in_dept.length;
+        //             if (count < 0) { count = 0; }
+        //             document.getElementById('count-all-plan-mc').innerHTML = count;
+        //         }
+        //     })
+        // }
 
 
-        function updateCartTotal(checkBox) {
-            let total = document.getElementById("total-price-mc").innerHTML;
-            total_int = parseInt(total);
-            get2 = checkBox.parentElement.parentElement.getElementsByClassName("plan-price-mc");
-            price_int = parseInt(get2[0].innerHTML);
-            if (checkBox.checked) {
-                total_int = total_int + price_int;
-                document.getElementById("total-price-mc").innerHTML = total_int;
-                console.log(total_int);
-            }
-            else {
-                checkAll = document.getElementById("checkAll");
-                checkAll.checked = false;
-                total_int = total_int - price_int;
-                // if(total_int < 0)
-                document.getElementById("total-price-mc").innerHTML = total_int;
-                console.log(total_int);
-            }
-        }
+        // function updateCartTotal(checkBox) {
+        //     let total = document.getElementById("total-price-mc").innerHTML;
+        //     total_int = parseInt(total);
+        //     get2 = checkBox.parentElement.parentElement.getElementsByClassName("plan-price-mc");
+        //     price_int = parseInt(get2[0].innerHTML);
+        //     if (checkBox.checked) {
+        //         total_int = total_int + price_int;
+        //         document.getElementById("total-price-mc").innerHTML = total_int;
+        //         console.log(total_int);
+        //     }
+        //     else {
+        //         checkAll = document.getElementById("checkAll");
+        //         checkAll.checked = false;
+        //         total_int = total_int - price_int;
+        //         // if(total_int < 0)
+        //         document.getElementById("total-price-mc").innerHTML = total_int;
+        //         console.log(total_int);
+        //     }
+        // }
     </script>
 </body>
 

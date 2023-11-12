@@ -25,8 +25,8 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Favicons -->
-    <link href="/img/icon.png" rel="icon">
-    <link href="/img/icon.png" rel="apple-touch-icon">
+    <link href="img/icon.png" rel="icon">
+    <link href="img/icon.png" rel="apple-touch-icon">
 
 </head>
 
@@ -64,26 +64,13 @@
                 Quản lý
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link" href="gym-brand-department-list.html">
                     <i class="bi bi-server"></i>
-                    <span>Cơ sở</span>
+                    <span>Danh sách cơ sở</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Quản lý:</h6>
-                        <a class="collapse-item" href="gym-brand-department-list.html"><i class="bi bi-list"></i> Danh
-                            sách</a>
-                        <a class="collapse-item" href="gym-brand-department-add.html"><i
-                                class="bi bi-plus-circle-dotted"></i> Thêm mới</a>
-                        <div class="collapse-divider"></div>
-                    </div>
-                </div>
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
@@ -94,50 +81,24 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Quản lý:</h6>
-                        <a class="collapse-item" href="gym-brand-plan-list.html"><i class="bi bi-list"></i> Danh
-                            sách</a>
-                        <a class="collapse-item" href="gym-brand-plan-add.html"><i class="bi bi-plus-circle-dotted"></i>
-                            Thêm mới</a>
+                        <a class="collapse-item" href="gym-brand-plan-list-flexible.html">Gói linh hoạt</a>
+                        <a class="collapse-item" href="gym-brand-plan-list-fixed.html">Gói cố định</a>
                     </div>
                 </div>
             </li>
 
-            <!-- Nav Item - Employees Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmployees"
-                    aria-expanded="true" aria-controls="collapseEmployees">
+                <a class="nav-link" href="gym-brand-owner-list.html">
                     <i class="fas fa-users fa-fw"></i>
                     <span>Chủ cơ sở</span>
                 </a>
-                <div id="collapseEmployees" class="collapse" aria-labelledby="headingEmployees"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Quản lý:</h6>
-                        <a class="collapse-item" href="gym-brand-owner-list.html"><i class="bi bi-list"></i> Danh
-                            sách</a>
-                        <a class="collapse-item" href="gym-brand-owner-add.html"><i
-                                class="bi bi-plus-circle-dotted"></i> Thêm mới</a>
-                    </div>
-                </div>
             </li>
 
-            <!-- Nav Item - Services Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseServices"
-                    aria-expanded="true" aria-controls="collapseServices">
+                <a class="nav-link" href="gym-brand-service-list.html">
                     <i class="fas fa-wrench fa-fw"></i>
                     <span>Dịch vụ</span>
                 </a>
-                <div id="collapseServices" class="collapse" aria-labelledby="headingServices"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Quản lý:</h6>
-                        <a class="collapse-item" href="gym-brand-service-list.html"><i class="bi bi-list"></i> Danh
-                            sách</a>
-                        <a class="collapse-item" href="gym-brand-service-add.html"><i
-                                class="bi bi-plus-circle-dotted"></i> Thêm mới</a>
-                    </div>
-                </div>
             </li>
 
             <!-- Divider -->
@@ -148,7 +109,6 @@
                 Dịch vụ
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
             <!-- Nav Item - Đánh giá -->
             <li class="nav-item">
                 <a class="nav-link" href="gym-brand-feedback-list.html">
@@ -170,13 +130,6 @@
                 <a class="nav-link" href="gym-brand-update-profile.html">
                     <i class="fas fa-fw fa-id-card"></i>
                     <span>Hồ sơ thương hiệu</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="gym-brand-update-password.html">
-                    <i class="bi bi-shield-lock-fill"></i>
-                    <span>Đổi mật khẩu</span>
                 </a>
             </li>
 
@@ -294,6 +247,7 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
+
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -304,22 +258,14 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="gym-department-profile.html">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
+                                    Hồ sơ
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    Đăng xuất
                                 </a>
                             </div>
                         </li>
@@ -343,20 +289,26 @@
                                 <div class="row">
                                     <div class="col-md-2 mb-3">
                                         <label for="avatar" class="form-label fw-bold">Ảnh :</label>
-                                        <img class="show-avatar-img" src="img/undraw_profile_2.svg"
-                                            alt="Hình ảnh">
+                                        <img class="show-avatar-img" src="img/undraw_profile_2.svg" alt="Hình ảnh">
                                     </div>
                                     <div class="col-md-5 mb-3">
                                         <div class="mb-3">
-                                            <label for="name" class="form-label fw-bold">Tên :</label>
-                                            <input type="text" class="form-control" id="name"
-                                                placeholder="Lê Đình Tuấn" readonly>
+                                            <label for="firt-name" class="form-label fw-bold">Họ :</label>
+                                            <input type="text" class="form-control" id="firt-name"
+                                                name="firt-name" placeholder="Nhập họ">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="phone" class="form-label fw-bold">Số Điện Thoại
-                                                :</label>
-                                            <input type="text" class="form-control" id="phone"
-                                                placeholder="0987654321" readonly>
+                                            <label for="email" class="form-label fw-bold">Email :</label>
+                                            <input type="text" class="form-control" id="email"
+                                                placeholder="Nhập gmail">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="address" class="form-label fw-bold">Địa chỉ :</label>
+                                            <input type="text" class="form-control" id="address" name="address" placeholder="Nhập địa chỉ">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="date-of-birth" class="form-label fw-bold">Ngày Sinh :</label>
+                                            <input type="date" class="form-control" id="date-of-birth" name="date-of-birth">
                                         </div>
                                         <div class="mb-3">
                                             <label class="d-block fw-bold">Trạng thái :</label>
@@ -372,12 +324,30 @@
                                     </div>
                                     <div class="col-md-5 mb-3">
                                         <div class="mb-3">
-                                            <label for="email" class="form-label fw-bold">Email :</label>
-                                            <input type="text" class="form-control" id="email"
-                                                placeholder="ldt2001@gmail.com" readonly>
+                                            <label for="last-name" class="form-label fw-bold">Tên :</label>
+                                            <input type="text" class="form-control" id="last-name"
+                                                name="last-name" placeholder="Nhập tên">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="existing-department" class="form-label fw-bold">Chọn cơ sở :</label>
+                                            <label for="phone" class="form-label fw-bold">Số Điện Thoại :</label>
+                                            <input type="text" class="form-control" id="phone" name="phone" value="0987654321">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="id-card" class="form-label fw-bold">Số Căn Cước :</label>
+                                            <input type="text" class="form-control" id="id-card" name="id-card" placeholder="Nhập số căn cước">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="gender" class="form-label fw-bold">Giới Tính :</label>
+                                            <select class="form-select" id="gender" name="gender">
+                                                <option value="">Chọn giới tính</option>
+                                                <option value="Nam">Nam</option>
+                                                <option value="Nữ">Nữ</option>
+                                                <option value="Khác">Khác</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="existing-department" class="form-label fw-bold">Chọn cơ sở
+                                                :</label>
                                             <select class="form-select" id="existing-department"
                                                 name="existing-department">
                                                 <option value="option1">Cơ sở Đống Đa</option>
@@ -404,7 +374,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; Fitpass 2023</span>
                     </div>
                 </div>
             </footer>

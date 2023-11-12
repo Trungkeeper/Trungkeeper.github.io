@@ -71,7 +71,7 @@
                 </a>
             </li>
 
-                        <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-dumbbell fa-fw"></i>
@@ -247,7 +247,6 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -280,42 +279,61 @@
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h2 class="m-0 font-weight-bold text-primary">Đổi mật khẩu</h2>
+                        <div class="card-header py-3 d-flex justify-content-between">
+                            <h2 class="m-0 font-weight-bold text-primary">Danh sách các gói cố định</h2>
+                            <a href="gym-brand-plan-fixed-add.html" class="btn btn-primary" data-toggle="tooltip"
+                                data-placement="left" title="Thêm gói tập">
+                                <i class="fas fa-plus"></i>
+                            </a>
                         </div>
                         <div class="card-body">
-                            <div class="card-box">
-                                <h2 class="fs-title text-center">Đổi mật khẩu</h2>
-                                <div class="row">
-                                    <div class="row">
-                                        <div class="col-md-5 mb-3 mx-auto">
-                                            <div class="mb-3">
-                                                <label for="old-password" class="form-label fw-bold">Mật khẩu cũ:</label>
-                                                <input type="password" class="form-control" id="old-password" name="old-password" placeholder="Nhập mật khẩu cũ">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-5 mb-3 mx-auto">
-                                            <div class="mb-3">
-                                                <label for="new-password" class="form-label fw-bold">Mật khẩu mới:</label>
-                                                <input type="password" class="form-control" id="new-password" name="new-password" placeholder="Nhập mật khẩu mới">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-5 mb-3 mx-auto">
-                                            <div class="mb-3">
-                                                <label for="confirm-password" class="form-label fw-bold">Xác nhận mật khẩu mới:</label>
-                                                <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Xác nhận mật khẩu mới">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 text-center">
-                                        <input class="btn btn-submit" type="submit" value="Lưu mật khẩu">
-                                    </div>
+                            <div class="row">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTableFixed" width="100%"
+                                        cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Thứ tự</th>
+                                                <th>Tên gói tập</th>
+                                                <th>Số credit</th>
+                                                <th>Thời lượng gói tập</th>
+                                                <th data-toggle="tooltip" data-placement="top"
+                                                    title="Đây là mô tả của thời gian trước khi kích hoạt">
+                                                    Thời hạn trước khi kích hoạt</th>
+                                                <th data-toggle="tooltip" data-placement="top"
+                                                    title="Đây là mô tả của thời gian sau khi kích hoạt">
+                                                    Thời hạn sau khi kích hoạt</th>
+                                                <th>Trạng thái</th>
+                                                <th>Chi tiết</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Gói 3 ngày</td>
+                                                <td>100 Credit</td>
+                                                <td>3 ngày</td>
+                                                <td>10 ngày</td>
+                                                <td>30 ngày</td>
+                                                <td>Hoạt động</td>
+                                                <td><a href="gym-brand-plan-fixed-detail.html"
+                                                        class="btn btn-primary">Cập nhật</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Gói 1 tháng</td>
+                                                <td>200 Credit</td>
+                                                <td>30 ngày</td>
+                                                <td>15 ngày</td>
+                                                <td>40 ngày</td>
+                                                <td>Hoạt động</td>
+                                                <td><a href="gym-brand-plan-fixed-detail.html"
+                                                        class="btn btn-primary">Cập nhật</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </div>  
+                            </div>
                         </div>
                     </div>
 
